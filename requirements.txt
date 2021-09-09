@@ -5,3 +5,5 @@ jupyterlab
 
 numpy
 pandas
+sklearn
+pyreadr

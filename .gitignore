@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 .DS_Store
+
+# ignore todo files
+Todo*.md
