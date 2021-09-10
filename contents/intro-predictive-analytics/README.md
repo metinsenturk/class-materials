@@ -135,7 +135,9 @@ Please read the full case study from [Predicting Fuel Economy](fueleconomy.pdf).
 
 ## References
 
-- http://appliedpredictivemodeling.com/toc
-- https://towardsdatascience.com/descriptive-statistics-f2beeaf7a8df
+- [Applied Predictive Modeling](http://appliedpredictivemodeling.com/) is a book on the practice of modeling when accuracy is the primary goal written by Max Kuhn, Kjell Johnson
 - https://courses.lumenlearning.com/suny-natural-resources-biometrics/chapter/chapter-1-descriptive-statistics-and-the-normal-distribution/
 - https://www.sciencedirect.com/topics/medicine-and-dentistry/inferential-statistics
+- A detailed overview of [Descriptive Statistics](https://towardsdatascience.com/descriptive-statistics-f2beeaf7a8df)
+- IBM and Epic Apply Predictive Analytics to Electronic Health Records, by Zina sMoukheiber, Forbes magazine, February 19, 2014.
+- How Dell Predicts Which Customers Are Most Likely to Buy, by Rachael King, CIO Journal, Wall Street Journal, December 5, 2012.
