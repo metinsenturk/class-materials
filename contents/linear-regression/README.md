@@ -13,6 +13,7 @@
     - [Regularization](#regularization)
   - [Metrics for Regression](#metrics-for-regression)
   - [Plots](#plots)
+  - [Sample Notebooks to Look At](#sample-notebooks-to-look-at)
   - [References](#references)
 
 ## Introduction
@@ -91,6 +92,14 @@ For more on regression metrics, check out scikit-learn's [regression API](https:
 | Scale Location Plot       | Residuals should be spread equally along the ranges of predictors. Using this graph the assumption of equal variance or homoscedasticity can be checked. Should be a horizontal line |
 
 Check out [Metrics and Plots for Analyzing Linear regression models](https://medium.com/ml-course-microsoft-udacity/metrics-and-plots-for-analyzing-linear-regression-models-43b533547574).
+
+## Sample Notebooks to Look At
+
+Check out below notebboks to cover more.
+
+- [Simple and Multiple Linear Regression](Linear%20Regression.ipynb)
+- [PythonDataScienceHandbook's Linear Regression Notebook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.06-Linear-Regression.ipynb)
+
 ## References
 
 - Applied Predictive Modeling, Chapter 6.
