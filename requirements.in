@@ -1,8 +1,13 @@
 # this repository requires following 
 # packages to be installed.
-jupyter
-jupyterlab
 
+# for the sake of development. uncomment
+# for install.
+# jupyter
+# jupyterlab
+# pip-tools
+
+# everything in here needs
 numpy
 pandas
 sklearn
