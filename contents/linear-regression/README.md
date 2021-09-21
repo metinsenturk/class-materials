@@ -22,12 +22,12 @@ Predictive modeling's main objective is to minimize the error of the model and m
 
 Linear regression assumes that there is a linear model between the input variable and the output variable. If the input variable is a single variable, then the model is known as `simple linear regression`, and if there are many input variables, it is `multiple linear regression`. 
 
-## Data Preperation Needed for Linear Regression
+## Data Preparation Needed for Linear Regression
 
 Linear regression makes some assumptions about your dataset when you use ordinary least squares method for modeling for it to work properly.
 
 - **Linearity**. The relationship between your input and output must be linear for any type of linear model. 
-- **Remove any Noise**. Input and output variables need to be clearn without any outliers
+- **Remove any Noise**. Input and output variables need to be clean without any outliers
 - **Remove Collinearity**. Regression will overfit the data when are correlated variables.
 - **Gaussian Distributions**. Predictions will be more accurate when input and output variables are normally distributed.
 - **Rescale Inputs**: Using standardization or normalization.
