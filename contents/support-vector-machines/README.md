@@ -45,6 +45,42 @@ SVM tries to find the best fitting hyper-plane that seperates different classes 
 
 ## How does it work?
 
+In below examples, we have a datasets with 2 different classes, stars and dots. We will draw hyper-planes to seperate the two classes with each other.
+
+![](assets/1.webp)
+
+There are 3 hyper-planes: A, B, and C. Above scenario the plane B achieves the goal.
+
+|                    |                    |
+| ------------------ | ------------------ |
+| ![](assets/2.webp) | ![](assets/3.webp) |
+
+Here we have 3 hyperplanes parallel to each other, but the best one here is C. This is because C can **maximize the distance** between the support vector and the hyper-plane. This distance is know as **Margin**. The image on the right shows that hyper-plane C has the largest margin.
+
+![](assets/4.webp)
+
+In above layout we from the two hyper-planes, B has a higher margin compared to A. However, B has a misclassification of a data point, therefore the right margin is A.
+
+|                    |                    |
+| ------------------ | ------------------ |
+| ![](assets/5.webp) | ![](assets/6.webp) |
+
+Above there is data that is not linearly seperable. In this scenerio we can choose to ignore outliers in the data and see that SVM is robust to make the linear seperation.
+
+|                    |                    |
+| ------------------ | ------------------ |
+| ![](assets/7.webp) | ![](assets/8.webp) |
+
+When linear seperation is now possible, we can look at a different angle. The left image looks the data in X-Y plane, right looks at X-Z plane. We can achieve this by using a mathematical function, say:
+
+z = x^2 + y^2
+
+Since z values will always be positive, we can relook at our data in a different angle where linear seperation looks possible. This is the **kernel trick** that transforms data into different dimentions to make it seperable.
+
+![](assets/9.webp)
+
+Above putting the kernel function seperates the two classes.
+
 ## Kernels 
 
 Kernel function is a method to transform low dimentional input data into the higher dimentional data so that the data can be seperable.
@@ -95,3 +131,4 @@ Read more on
 - https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/
 - https://monkeylearn.com/blog/introduction-to-support-vector-machines-svm/
 - https://towardsdatascience.com/https-medium-com-pupalerushikesh-svm-f4b42800e989
+- https://www.hackerearth.com/blog/developers/simple-tutorial-svm-parameter-tuning-python-r/
