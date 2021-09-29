@@ -124,11 +124,13 @@ y = np.array([1, 1, 2, 2])
 clf = make_pipeline(StandardScaler(), SVC(gamma='auto'))
 clf.fit(X, y)
 ```
+
 ## References
 
 Read more on
 
 - https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/
+- https://www.analyticsvidhya.com/blog/2021/03/beginners-guide-to-support-vector-machine-svm/
 - https://monkeylearn.com/blog/introduction-to-support-vector-machines-svm/
 - https://towardsdatascience.com/https-medium-com-pupalerushikesh-svm-f4b42800e989
 - https://www.hackerearth.com/blog/developers/simple-tutorial-svm-parameter-tuning-python-r/
