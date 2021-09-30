@@ -9,7 +9,6 @@
     - [Pros](#pros)
     - [Cons](#cons)
   - [How does it work?](#how-does-it-work)
-  - [Kernels](#kernels)
   - [Tuning parameters](#tuning-parameters)
     - [Gamma](#gamma)
     - [Kernel](#kernel)
@@ -81,15 +80,6 @@ Since z values will always be positive, we can relook at our data in a different
 
 Above putting the kernel function seperates the two classes.
 
-## Kernels 
-
-Kernel function is a method to transform low dimentional input data into the higher dimentional data so that the data can be seperable.
-
-![kernel functions](assets/kernel-functions.png)
-<sub>List of kernel functions and their visualization - [Credit](https://gist.github.com/WittmannF/60680723ed8dd0cb993051a7448f7805)</sub>
-
-Also check out Sklearn's [cLassifier comparison](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html).
-
 ## Tuning parameters
 
 ### Gamma
@@ -102,6 +92,13 @@ It defines how far the effect of a single point can effect in the algorithm.
 ### Kernel
 
 The function to define the seperation.
+
+Kernel function is a method to transform low dimentional input data into the higher dimentional data so that the data can be seperable.
+
+![kernel functions](assets/kernel-functions.png)
+<sub>List of kernel functions and their visualization - [Credit](https://gist.github.com/WittmannF/60680723ed8dd0cb993051a7448f7805)</sub>
+
+Also check out Sklearn's [cLassifier comparison](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html).
 
 ### Regularization
 
