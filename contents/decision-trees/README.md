@@ -128,3 +128,5 @@ There are a lot of methods, like  cost complexity pruning, weakest link pruninin
 - https://deepai.org/machine-learning-glossary-and-terms/random-forest
 - https://towardsdatascience.com/decision-trees-for-classification-id3-algorithm-explained-89df76e72df1
 - https://medium.com/analytics-steps/understanding-the-gini-index-and-information-gain-in-decision-trees-ab4720518ba8
+- https://www.python-course.eu/Decision_Trees.php
+- https://nbviewer.org/gist/jwdink/9715a1a30e8c7f50a572
