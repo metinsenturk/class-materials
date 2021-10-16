@@ -7,6 +7,7 @@
   - [Introduction](#introduction)
     - [Advantages](#advantages)
     - [Disadvantages](#disadvantages)
+  - [Recap on Mean, Variance, Covariance](#recap-on-mean-variance-covariance)
   - [Assumptions of PCA](#assumptions-of-pca)
   - [The Importance of Standard Scaling](#the-importance-of-standard-scaling)
   - [When to Use PCA?](#when-to-use-pca)
@@ -42,6 +43,16 @@ Dimentionality reduction can be looked at two ways:
 - Low interpretation of principal components. After getting principal components, you don't know which features were the most important from your original features.
 - Makes a trade-off between information loss vs dimentionality reduction. By losing some variance on dataset we reduce the features.
 
+## Recap on Mean, Variance, Covariance
+
+- **Mean**: Sum of all points divided by the count of all points.
+- **Variance**: Measure of deviation from the mean for points in a dimension.
+- **Covariance**: Measure of how much each of the dimensions vary from the mean **with respect to each other**. Measured between 2 dimensions. Also refers to the relation between 2 dimensions.
+- **Correlation**: Correlation is the measurement of the strength of the covariance of the 2 variables. Ranges between 1 and -1. 1 indicates strong positive corelation, whereas -0 indicates a strong negative correlation. 0 means 2 variables are not correlated to each other.
+- **Eigenvector**: The transformation of the direction that doesn't change direction.
+- **Eigenvalue**: The scalar value that represents the multiple of the eigenvector.
+- **Covariance Matrix**: It is nothing but the matrix of the variance and covariance of the dimensions between each other. In a way, it defines both the spread (variance) and the orientation (covariance) of the data.
+
 ## Assumptions of PCA
 
 - Data should not have outliers.
@@ -49,6 +60,7 @@ Dimentionality reduction can be looked at two ways:
 - PCA assumes some correlation between features.
 - PCA assumes a linear relationship between features. Non-linear features should be transformed with methods like log transform, etc.
 - PCA assumes no missing values/ rows in the dataset.
+
 
 ## The Importance of Standard Scaling
 
@@ -76,6 +88,13 @@ Amazing video by Joshua Starmer on understanding the principal components of PCA
 
 <video src='https://youtu.be/FgakZw6K1QQ' width=180/>
 
+Basically, the way the PCA algorithm works is the following way. The goal is the find the r-dimensional projection that best preserves the variance.
+
+1. Compute the mean vector and the covariance matrix of original data points
+2. Compute eigenvectors and eigenvalues of the sum
+3. Select top r eigenvectors
+4. Project points onto subspace spanned by eigenvectors.
+
 ## Principal Components
 
 **1st principal component** is a linear combination of the original features where the maximum variance captured. It shows the direction of the highest variation in the data. No other component can have higher variation than the 1st principal component.
@@ -89,3 +108,5 @@ Amazing video by Joshua Starmer on understanding the principal components of PCA
 - https://setosa.io/ev/principal-component-analysis/
 - StatQuest. “Principal Component Analysis (PCA), Step-by-Step” YouTube, Joshua Starmer, 3 Feb. 2015, https://youtu.be/FgakZw6K1QQ.
 - https://builtin.com/data-science/step-step-explanation-principal-component-analysis
+- https://courses.cs.washington.edu/courses/csep546/16sp/slides/PCA_csep546.pdf
+- https://www.mathsisfun.com/algebra/eigenvalue.html
