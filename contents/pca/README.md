@@ -86,7 +86,7 @@ You can use PCA when any of the following conditions met.
 
 Amazing video by Joshua Starmer on understanding the principal components of PCA.
 
-<video src='https://youtu.be/FgakZw6K1QQ' width=180/>
+[https://youtu.be/FgakZw6K1QQ](https://youtu.be/FgakZw6K1QQ)
 
 Basically, the way the PCA algorithm works is the following way. The goal is the find the r-dimensional projection that best preserves the variance.
 
