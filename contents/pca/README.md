@@ -11,8 +11,9 @@
   - [Assumptions of PCA](#assumptions-of-pca)
   - [The Importance of Standard Scaling](#the-importance-of-standard-scaling)
   - [When to Use PCA?](#when-to-use-pca)
-  - [Understand How PCA Works](#understand-how-pca-works)
   - [Principal Components](#principal-components)
+    - [Understand How PCA Works](#understand-how-pca-works)
+    - [How to Find PCs?](#how-to-find-pcs)
   - [References](#references)
 
 ## Introduction
@@ -21,7 +22,11 @@ PCA is an **unsupervised** machine learning algorithm that has been used in many
 
 So far while we are learning machine learning algorithms we looked at datasets with less features, where understanding the dataset was somewhat easy. However, in real life, there are many aspects of a problem and therefore you may not always know or understand your data. For example, calculating a country's GPA involves so many features of a country that it is not possible to find relations between all features, and so on.
 
-One of the main use of PCA is dimensionality reduction. In such cases described above, we want to reduce dimentionality but we don't want to lose information. PCA reduces dimentionality of datasets while **preserving as much of the statistical information** as possible.
+One of the main use of PCA is dimensionality reduction. In such cases described above, we want to reduce dimentionality but we don't want to lose information. PCA reduces dimentionality of datasets while **preserving as much of the statistical information** as possible. In other words, PCA tries projecting higher dimensional data into a lower dimension by combining correlated features into new features.
+
+PCA is rotating coordinating axes in such a way that the axes captures as much of the variance on the dataset as possible.
+
+![](assets/rotate.gif)
 
 Dimentionality reduction can be looked at two ways:
 
@@ -48,9 +53,9 @@ Dimentionality reduction can be looked at two ways:
 - **Mean**: Sum of all points divided by the count of all points.
 - **Variance**: Measure of deviation from the mean for points in a dimension.
 - **Covariance**: Measure of how much each of the dimensions vary from the mean **with respect to each other**. Measured between 2 dimensions. Also refers to the relation between 2 dimensions.
-- **Correlation**: Correlation is the measurement of the strength of the covariance of the 2 variables. Ranges between 1 and -1. 1 indicates strong positive corelation, whereas -0 indicates a strong negative correlation. 0 means 2 variables are not correlated to each other.
+- **Correlation**: Correlation is the measurement of the strength of the covariance of the 2 variables. Ranges between 1 and -1. 1 indicates strong positive corelation, whereas -1 indicates a strong negative correlation. 0 means 2 variables are not correlated to each other.
 - **Eigenvector**: The transformation of the direction that doesn't change direction.
-- **Eigenvalue**: The scalar value that represents the multiple of the eigenvector.
+- **Eigenvalue**: The scalar value that represents the multiple of the eigenvector. Sum of squared distances to origin.
 - **Covariance Matrix**: It is nothing but the matrix of the variance and covariance of the dimensions between each other. In a way, it defines both the spread (variance) and the orientation (covariance) of the data.
 
 ## Assumptions of PCA
@@ -81,8 +86,17 @@ You can use PCA when any of the following conditions met.
 - Have a dataset with lots of features with litle knowledge on relations and features itself. 
 - Ensure that input variables are completely independent of each other (Now they are principal components)
 - Have a complex dataset but need a visualization to bring data into 2D or 3D space.
-  
-## Understand How PCA Works
+
+## Principal Components
+
+**1st principal component** is a linear combination of the original features where the maximum variance captured. It shows the direction of the highest variation in the data. No other component can have higher variation than the 1st principal component.
+
+**2nd principal component** is also a linear combination of the original features, where the remaining variance captured and it is uncorrelated with the 1st principal component. If it is uncorrelated, it should be [orthogonal](https://en.wikipedia.org/wiki/Orthogonality), where the correlation of the two components are zero.
+
+**All other principal components** follow the same concept, they capture the remaining largest variation where it is uncorrelated to the previous component. Therefore, in a `n x m` dimensional data, there can be `min(n - 1, p)` components.
+
+
+### Understand How PCA Works
 
 Amazing video by Joshua Starmer on understanding the principal components of PCA.
 
@@ -95,13 +109,32 @@ Basically, the way the PCA algorithm works is the following way. The goal is the
 3. Select top r eigenvectors
 4. Project points onto subspace spanned by eigenvectors.
 
-## Principal Components
+### How to Find PCs?
 
-**1st principal component** is a linear combination of the original features where the maximum variance captured. It shows the direction of the highest variation in the data. No other component can have higher variation than the 1st principal component.
+Plot the data.
 
-**2nd principal component** is also a linear combination of the original features, where the remaining variance captured and it is uncorrelated with the 1st principal component. If it is uncorrelated, it should be [orthogonal](https://en.wikipedia.org/wiki/Orthogonality), where the correlation of the two components are zero.
+![](assets/how1.png)
 
-**All other principal components** follow the same concept, they capture the remaining largest variation where it is uncorrelated to the previous component. Therefore, in a `n x m` dimensional data, there can be `min(n - 1, p)` components.
+Find the center of the data.
+
+![](assets/how2.png)
+
+Shift the data points so that the center is now at center of coordinate system (0,0).
+
+![](assets/how3.png)
+
+Find the line that best fits the data. Sum of squared error maximized. This is PC1.
+
+![](assets/how4.png)
+
+PC2 is the best fitting line perpendicular (intersecting at a right angle) to PC1.
+
+![](assets/how5.png)
+
+Rotate the chart so PC1 is the x-axis and PC2 is the y-axis
+
+![](assets/how6.png)
+
 
 ## References
 
@@ -110,3 +143,4 @@ Basically, the way the PCA algorithm works is the following way. The goal is the
 - https://builtin.com/data-science/step-step-explanation-principal-component-analysis
 - https://courses.cs.washington.edu/courses/csep546/16sp/slides/PCA_csep546.pdf
 - https://www.mathsisfun.com/algebra/eigenvalue.html
+- https://towardsdatascience.com/pca-principal-component-analysis-explained-visually-in-5-minutes-20ce8a9ebf0f
