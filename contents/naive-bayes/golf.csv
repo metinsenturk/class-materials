@@ -1,0 +1,15 @@
+Outlook,Temperature Numeric,Temperature Nominal,Humidity Numeric,Humidity Nominal,Windy,Play
+overcast,83,hot,86,high,False,yes
+overcast,64,cool,65,normal,True,yes
+overcast,72,mild,90,high,True,yes
+overcast,81,hot,75,normal,False,yes
+rainy,70,mild,96,high,False,yes
+rainy,68,cool,80,normal,False,yes
+rainy,65,cool,70,normal,True,no
+rainy,75,mild,80,normal,False,yes
+rainy,71,mild,91,high,True,no
+sunny,85,hot,85,high,False,no
+sunny,80,hot,90,high,True,no
+sunny,72,mild,95,high,False,no
+sunny,69,cool,70,normal,False,yes
+sunny,75,mild,70,normal,True,yes
