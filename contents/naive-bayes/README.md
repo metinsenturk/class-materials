@@ -47,7 +47,7 @@ Applications of naive bayes algorithms are vast. Below areas are a few:
 
 - **Real time prediction:** Due to being a fast in training and prediction, it could be used in real time predicitons.
 - **Mutli-class prediction:** Target variables with more than 2 labels perform well.
-- **Text classification (docuement classification, spam filtering, sentiment analysis):** Since it is a better multi-class classifier, they have a tendency to have higher success rates.
+- **Text classification (document classification, spam filtering, sentiment analysis):** Since it is a better multi-class classifier, they have a tendency to have higher success rates.
 - **Recommendation systems:** Naive bayes classifiers could also be used in recommendation systems.
 
 ### Assumptions
