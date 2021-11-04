@@ -1,5 +1,23 @@
 # Recommendation Systems
 
+## Table of Contents
+
+- [Recommendation Systems](#recommendation-systems)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Data](#data)
+  - [Different Types of Recommendation Systems](#different-types-of-recommendation-systems)
+    - [Collaborative Filtering](#collaborative-filtering)
+    - [Content Based Filtering](#content-based-filtering)
+  - [How do the Recommendation Systems Function?](#how-do-the-recommendation-systems-function)
+    - [Cosine Similarity](#cosine-similarity)
+    - [Manhattan Distance](#manhattan-distance)
+    - [Euclidean Distance](#euclidean-distance)
+    - [Pearson Correlation Coefficient](#pearson-correlation-coefficient)
+    - [Jaccard Similarity](#jaccard-similarity)
+    - [Hamming Distance](#hamming-distance)
+  - [References](#references)
+
 ## Introduction
 
 Personalization is the de-facto standard of today's product and services. Anywhere you look, you may find lots of recommendation systems helping you to make a decision. Examples of use are like:
@@ -42,6 +60,13 @@ This type of recommendation system works with the following idea in mind:
 
 Similarity is measured by similarity to other users. For example, assume there is a person who has already bought a wallet and a computer mouse. If another person interested in buying a wallet, this type of recommendation system can recommend a computer mouse. It's been in use by many social network companies and e-commerce industry. 
 
+Can further be classified into two sections:
+
+- **User-based filtering:** Recommend products to a user that similar users have liked.
+- **Item-based filtering:** Recommend products to a user that are similar to another item.
+
+A good dataset to look for this is [movielens](https://grouplens.org/datasets/movielens/) by University of Minnesota.
+
 ### Content Based Filtering
 
 Uses information about the product or service and user's interaction to recommend new product or services. Similarity of a product is measured with product attributes. 
@@ -61,10 +86,52 @@ Examples of this kind are:
 
 <!-- Advantage of this method is that it works even when a product doesn't have any reviews. On the other hand, on large datasets it can be difficult asc every user has different opinion about products. -->
 
-<!-- ## How do the Recommendation Systems Function? -->
+## How do the Recommendation Systems Function?
+
+In all of the methods above, each product and attributes are mapped to an embedding space. The similarity of the product is defined by a similarity measure. This is a function that takes the embedding space and returns a value to measure the similarity. Most of the recommendation systems relay on below measurements:
+
+- Cosine
+- Dot Product
+- Minkowski Distances(Manhattan, Euclidean)
+
+### Cosine Similarity
+
+Measures the angle between two vectors. It's a judgement of the orientation, rather than the magnitute. Therefore, a data point of [5, 7] and [50, 70] will have a similar cosine similarity since they have the same angle (With euclidean distance, they would be far from each other). 
+
+Cosine of 0 means products are similar and 1 means they are dissimilar.
+
+### Manhattan Distance
+
+It is the minkowski distance where exponential part is equal to 1. It is also called rectilinear distance, L1-distance/L1-norm, Minkowski’s L1- distance, city block distance and taxi cab distance.
+
+### Euclidean Distance
+
+It is the minkowski distance where exponential part is equal to 2. It is also called as L2 norm or ruler distance. In general, default distance is considered Euclidean distance.
+
+### Pearson Correlation Coefficient
+
+It is the correlation between two variables and ranges between 1 and -1.
+
+The value of 1 means it is a positive correlation, 0 is no correlation, and -1 is a negative correlation.
+
+### Jaccard Similarity
+
+Used for finding similarity between finite sets. It is defined as the cardinality of the intersection of sets divided by the cardinality of the union of the sample sets.
+
+### Hamming Distance
+
+Hamming distance is used for categorical variables where numbers are not used. 
+
+- If the value of x and y is same, then it distance is 0
+- If the value of x and y is different, then it distance is 1
+
+For example, the Hamming distance between 1101111 and 1001001 is 3, while the Hamming distance between ‘batman’ and ‘antman’ is 2.
+
+The lower value means the two categories are similar, higher means they are dissimilar.
 
 ## References
 
 - [An In-Depth Guide to How Recommender Systems Work](https://builtin.com/data-science/recommender-systems)
 - [Recommendation systems crash course by Google](https://developers.google.com/machine-learning/recommendation)
-- 
+- https://github.com/amitkaps/recommendation
+- [Best Practices on Recommendation Systems by Microsoft](https://github.com/microsoft/recommenders)
