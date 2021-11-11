@@ -48,6 +48,32 @@ The process of converting words into numbers are called Vectorization.
 - Bag of Words
 - Word Embeddings
 
+### Word Embeddings
+
+Word embedding is a langauge modeling technique that is used for mapping words to vectors of real numbers. Words or phrases are represented in vector space with multiple dimensions. Word embeddings can be generated through neural networks, co-occurence matrix, probabilistic models, etc. These vectors are used to find word predictions, similarities/ semantics, etc. Some common use cases are:
+
+- Finding similar words (use Euclidean distance, cosine similarity, etc.)
+- Text classifications
+- Document clustering
+- Feature extraction for text classifications
+
+Some well-known pre-trained word embeddings libraries are:
+
+- Word2Vec — From Google
+- Fasttext — From Facebook
+- GloVe — From Standford
+
+The basic idea of word embedding is words that occur in similar context tend to be closer to each other in vector space.
+
+#### Word2Vec
+
+![](cbow-skipgram.png)
+
+These models are shallow two layer neural networks having one input layer, one hidden layer and one output layer. Word2Vec utilizes two architectures:
+
+1. Continous Bag of Words(CBOW): the distributed representations of surrounding words combined to **predict the word in the middle**.
+2. Skip Gram: the distributed representation of the input word used to **predict the context**.
+
 ## Algorithms Used in NLP Tasks
 
 The most popular supervised NLP machine learning algorithms are:
@@ -67,3 +93,4 @@ Some common unsupervised algorithms are:
 
 https://course.spacy.io/en
 https://www.lexalytics.com/lexablog/machine-learning-natural-language-processing
+https://www.geeksforgeeks.org/python-word-embedding-using-word2vec/
