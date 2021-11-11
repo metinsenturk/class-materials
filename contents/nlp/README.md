@@ -6,6 +6,7 @@
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
     - [NLP Applications](#nlp-applications)
+    - [Terminology](#terminology)
   - [Basic NLP Operations](#basic-nlp-operations)
     - [Tokenization (Word, Sentence)](#tokenization-word-sentence)
     - [Stopwords Removal](#stopwords-removal)
@@ -16,6 +17,8 @@
     - [Stemming](#stemming)
     - [Lemmatization](#lemmatization)
   - [Text Vectorization](#text-vectorization)
+    - [Bag of Words](#bag-of-words)
+    - [Term Frequency - Inverse Document Frequency (TF-IDF)](#term-frequency---inverse-document-frequency-tf-idf)
     - [Word Embeddings](#word-embeddings)
       - [Word2Vec](#word2vec)
   - [Algorithms Used in NLP Tasks](#algorithms-used-in-nlp-tasks)
@@ -50,10 +53,33 @@ To make it work, we need to combine all 3 aspects. NLP can utilize machine learn
 - Predictive Text
 - Email filters
 - Automatic Summarization
-- Named Entity Recognition
-- Sentiment Analysis
+- Named Entity Recognition (extraction of names, adresses, time, organizations, location, etc.)
+- Sentiment Analysis (whether the context of the text is positive or negative)
 - Speech Recognition
 - Topic Segmentation
+- Question Answering
+- Information Retrieval/ Latent Semantic Indexing (Search engines)
+
+And many, many more applications.
+
+### Terminology
+
+A brief glossary of NLP that will help us to understand more while reading.
+
+| Term              | Definition                                                                                                                                                                    |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Corpus (Corpora)  | Is a collection of text. Can refer to collection of books, conversations, news, reviews, etc.                                                                                 |
+| Documents         | A body of a text. A collection of documents makes into a corpus. Each conversation, each news article, etc.                                                                   |
+| Token             | The output of breaking a large text into smaller pieces. Pieces are tokens.                                                                                                   |
+| Tokenization      | The process of breaking large text into smaller pieces.                                                                                                                       |
+| Morpheme          | THe smallest meaningful unit in a language.                                                                                                                                   |
+| Lexicon           | The component that contains any type of information (semantic or grammatical) about the token.                                                                                |
+| Preprocessing     | The process of cleaning the text data.                                                                                                                                        |
+| n-grams           | A sequence of n-tokens in a text. 1-gram is single tokens, 2-grams or bi-grams are 2 words together `[(the, book), (We, are), ...]`, 3-grams are 3 words together, and so on. |
+| Vocabulary        | Entire set of terms used in a body of text.                                                                                                                                   |
+| Out of Vocabulary | Model can encounter limited number of words during training. Words that are out of model's vocabulary typically gets assigned to a common placeholder.                        |
+
+Find out more on [The Natural Language Processing Dictionary](http://www.cse.unsw.edu.au/~billw/nlpdict.html).
 
 ## Basic NLP Operations
 
@@ -142,6 +168,47 @@ The process of converting words into numbers are called Vectorization.
 - Bag of Words
 - Word Embeddings
 
+### Bag of Words
+
+Simplest form of converting words into numbers. If you have a vocabulary of 10000 words, each word will be 1x10000 represented arrays. 
+
+Consider below example with a few documents. All the words are mapped in columns and based on their occurance in a document, vectorization is done by assigning 1 and 0s, counts, frequencies, etc.
+
+| Document       | Best | Food | Wisdom | Age | Empires | Young |
+| -------------- | ---- | ---- | ------ | --- | ------- | ----- |
+| Best food      | 1    | 1    | 0      | 0   | 0       | 0     |
+| Best wisdom    | 1    | 0    | 1      | 0   | 0       | 0     |
+| Age of Empires | 0    | 0    | 0      | 1   | 1       | 0     |
+| Young age      | 0    | 0    | 0      | 1   | 0       | 1     |
+
+Once the vocabulary is set and documents converted to matrix, the scoring of the words can be done in many ways. The simplest ones are:
+
+- One Hot Encoding (whether the word seen or not seen)
+- Counts (as seen above)
+- Frequencies (calculating the frequency of a word that appears in a document out of all documents)
+
+The vocabulary can have more than just words. Features can be created by unigrams, bigrams, etc.
+
+### Term Frequency - Inverse Document Frequency (TF-IDF)
+
+TF-IDF considers the relative importance of the word to a document. Vector is constructed the same way as Bag of Words, but instead of counts, frequencies are used as numbers. The words appear in more documents are penalized, and words that are distinct gets a higher score.
+
+**Term Frequency**: is a scoring of the frequency of the word in the current document.
+**Inverse Document Frequency**: is a scoring of how rare the word is across documents.
+
+The calculation of TF-IDF with an example. We have a corpus of 10 million documents. There is a document:
+
+- Where the word "chocolatte" appears 3 times. The term frequency (i.e., tf) for cat is then (3 / 100) = 0.03.
+- Ouf of a 10 million, "chocolatte" appears in 1000 of the documents. The inverse document frequency (i.e., idf) is calculated as log(10,000,000 / 1,000) = 4.
+- Tf-idf weight is (TF X IDF). That is 0.03 * 4 = 0.12.
+
+Therefore, each TD-IDF of the token can be calculated and the vectorization matrix can be calculated for each document in the corpus.
+
+| Document            | best | chocolatte | ..  | food |
+| ------------------- | ---- | ---------- | --- | ---- |
+| Document 1          | ..   | ..         | ..  | ..   |
+| best chocolatte ... | ..   | 0.12       | ..  |
+
 ### Word Embeddings
 
 Word embedding is a langauge modeling technique that is used for mapping words to vectors of real numbers. Words or phrases are represented in vector space with multiple dimensions. Word embeddings can be generated through neural networks, co-occurence matrix, probabilistic models, etc. These vectors are used to find word predictions, similarities/ semantics, etc. Some common use cases are:
@@ -197,3 +264,4 @@ https://course.spacy.io/en
 https://www.lexalytics.com/lexablog/machine-learning-natural-language-processing
 https://www.geeksforgeeks.org/python-word-embedding-using-word2vec/
 https://realpython.com/nltk-nlp-python/
+https://medium.com/analytics-vidhya/nlp-glossary-for-beginners-c3093529ee4
