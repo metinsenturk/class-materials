@@ -23,6 +23,7 @@
       - [Word2Vec](#word2vec)
   - [Algorithms Used in NLP Tasks](#algorithms-used-in-nlp-tasks)
   - [NLP Libraries](#nlp-libraries)
+  - [Sample Repositories for Hands on Testing](#sample-repositories-for-hands-on-testing)
   - [References](#references)
 
 ## Introduction
@@ -258,10 +259,18 @@ There are many libaries in python and other languages for NLP. Some most widely 
 - [spacy](https://spacy.io/)
 - [gensim](https://radimrehurek.com/gensim/)
 
+## Sample Repositories for Hands on Testing
+
+- https://github.com/DistrictDataLabs/intro-to-nltk
+- https://github.com/hb20007/hands-on-nltk-tutorial
+- https://github.com/dipanjanS/text-analytics-with-python
+- https://course.spacy.io/en
+- https://github.com/Cristianasp/spacy
+
 ## References
 
-https://course.spacy.io/en
 https://www.lexalytics.com/lexablog/machine-learning-natural-language-processing
 https://www.geeksforgeeks.org/python-word-embedding-using-word2vec/
 https://realpython.com/nltk-nlp-python/
 https://medium.com/analytics-vidhya/nlp-glossary-for-beginners-c3093529ee4
+https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/ch04.html
