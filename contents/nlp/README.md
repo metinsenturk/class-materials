@@ -1,5 +1,27 @@
 # Natural Language Processing (NLP)
 
+## Table of Contents
+
+- [Natural Language Processing (NLP)](#natural-language-processing-nlp)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+    - [NLP Applications](#nlp-applications)
+  - [Basic NLP Operations](#basic-nlp-operations)
+    - [Tokenization (Word, Sentence)](#tokenization-word-sentence)
+    - [Stopwords Removal](#stopwords-removal)
+    - [Punctuation Removal](#punctuation-removal)
+    - [Part of Speech Tagging](#part-of-speech-tagging)
+    - [Chunking](#chunking)
+    - [Chinking](#chinking)
+    - [Stemming](#stemming)
+    - [Lemmatization](#lemmatization)
+  - [Text Vectorization](#text-vectorization)
+    - [Word Embeddings](#word-embeddings)
+      - [Word2Vec](#word2vec)
+  - [Algorithms Used in NLP Tasks](#algorithms-used-in-nlp-tasks)
+  - [NLP Libraries](#nlp-libraries)
+  - [References](#references)
+
 ## Introduction
 
 Natural language processing is the field of studying langauges and computer science to develop intelligent applications. NLP helps machines to understand human languages the way humans naturally do. The field involves use of computer science techniques to both speaking and typing.
@@ -35,11 +57,83 @@ To make it work, we need to combine all 3 aspects. NLP can utilize machine learn
 
 ## Basic NLP Operations
 
-Tokenization (Word, Sentence)
-Stopwords Removal
-Punctuation Removal
-Part of speech tagging
-Stemming and Lemmatization
+Analyzing textual data involves data cleanup and feature extraction. Some most common operations are listed below.
+
+- Tokenization (Word, Sentence)
+- Stopwords Removal
+- Punctuation Removal
+- Part of speech tagging
+- Stemming and Lemmatization
+
+Find out more about Analyzing Text with the Natural Language Toolkit in [NLTK Book](https://www.nltk.org/book/).
+
+### Tokenization (Word, Sentence)
+
+The action of splitting any text by word or sentence is known as tokenization. Generally this is the first step in a NLP pipeline.
+
+**Tokenizing by Word:** Words are known as atoms of the human languages. Tokenizing by word allows to identify words that are particularly come up more often.
+
+**Tokenizing by Sentence:** Allows to see how words are connected and see more context around the words.
+
+There are other tokenization methods, such as [white-space tokenization](https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/process/WhitespaceTokenizer.html), which is also known as unigram tokenization. This process splits the text into by white space into tokens. [Regular expression tokenization](https://goodboychan.github.io/python/datacamp/natural_language_processing/2020/07/15/01-Regular-expressions-and-word-tokenization.html) is another type of tokenization utilizes regular expression patterns to get the tokens from a text.
+
+### Stopwords Removal
+
+Stop words refers to the very common words like `in`, `is`, `are`, `have` that we use as part of languages but they don't contribute any value towards the goals of NLP.
+
+Stop words can be considered as the noise in the textual data. Along with stopwords, there are other noisy tokens that can be removed along with stopwords, such as URLs, social media entities (hashtags, mentions, etc), punctuations, etc.
+
+### Punctuation Removal
+
+Like stop words, this task is to remove punctuations in a text. Punctuations like commas, apostrophes, quotes, question marks, and more.
+
+### Part of Speech Tagging
+
+Words have a role in a sentence. Part of speech refers to assigning these roles to the words. Tagging parts of speech (POS tagging), is the task of labeling the type of the word in the text. For example, using POS tagging, we can find the strengths and weaknesses of a product by calculating most and least used descriptors.
+
+There are eight parts of speech for english.
+
+| Part of speech | Role                                                                       | Examples                   |
+| -------------- | -------------------------------------------------------------------------- | -------------------------- |
+| Noun           | A person, place, or thing                                                  | mountain, bagel, Poland    |
+| Pronoun        | Replaces a noun                                                            | you, she, we               |
+| Adjective      | Information about what a noun is like                                      | efficient, windy, colorful |
+| Verb           | Is an action or a state of being                                           | learn, is, go              |
+| Adverb         | Gives information about a verb, an adjective, or another adverb            | efficiently, always, very  |
+| Preposition    | Gives information about how a noun or pronoun is connected to another word | from, about, at            |
+| Conjunction    | Connects two other words or phrases                                        | so, because, and           |
+| Interjection   | Is an exclamation                                                          | yay, ow, wow               |
+
+POS tagging can be very useful for both intermediate or final product NLP applications. Below are some examples that POS tagging can be helpful.
+
+- **Word sense disambiguation**: Words can have multiple meanings and POS tagging can identify which meaning is used. The word "book" can refer to a noun or a verb depends on the context. The sentence `I booked a flight` and `I read this book for my studies` examplifies this case.
+- **Improve word features**: "Book the flight, I am about the finish my book" sentence, if tokenized, will have 2 counts of `book`. However, if POS tagging is used, `book_NN` and `book_VB` can be made which may help capturing the context better.
+- **Normalization and Lemmatization**: Can be used for effective lemmatization while converting to the lemma of the word.
+- **Efficient noise removal**: POS tagging can help removal of stopwords, etc.
+
+### Chunking
+
+Chunking is the operation to identify phrases in a language. A phrase is a word or group of words that works as a single unit to perform a grammatical function. Noun phrases are built around a noun.
+
+Here are some examples:
+
+- A planet
+- A tilting planet
+- A swiftly tilting planet
+
+### Chinking
+
+Chinking is like chunking, but it removes chunks from chuncks. While chunking creates phrases, chinking breaks up or removes unwanted chunks. For example, you may want to exclude adjectives from your chunks.
+
+### Stemming
+
+Stemming is a text processing task to reduce the word into it's root, the core of the word. For example, words `helping, helper` has the same root of `help`. It allows to get the basic meaning of the word rather than how the word is used.
+
+### Lemmatization
+
+Lemmatization does the same operation as stemming does, but instead of just chopping of to the root, lemmatazing will give the core meaning of the word.
+
+A lemma is a word that represents a whole group of words, and that group of words is called a lexeme. The word “blend” is the lemma, and “blending” is part of the lexeme. So when you lemmatize a word, you are reducing it to its lemma.
 
 ## Text Vectorization
 
@@ -89,8 +183,17 @@ Some common unsupervised algorithms are:
 - Latent Semantic Indexing (LSI)
 - Matrix Factorization
 
+## NLP Libraries
+
+There are many libaries in python and other languages for NLP. Some most widely used ones are:
+
+- [nltk](https://www.nltk.org/)
+- [spacy](https://spacy.io/)
+- [gensim](https://radimrehurek.com/gensim/)
+
 ## References
 
 https://course.spacy.io/en
 https://www.lexalytics.com/lexablog/machine-learning-natural-language-processing
 https://www.geeksforgeeks.org/python-word-embedding-using-word2vec/
+https://realpython.com/nltk-nlp-python/
