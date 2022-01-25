@@ -1,0 +1,18 @@
+version: '3'
+services:
+  zeppelin:
+    container_name: apache-zeppelin
+    image: apache/zeppelin:0.10.0
+    ports:
+      - "8080:8080"
+      - "4040-4050:4040-4050"
+    volumes:
+      - ./:/opt/zeppelin/notebook2
+  pyspark:
+    container_name: pyspark-notebook
+    image: jupyter/pyspark-notebook
+    ports:
+      - "8888:8888"
+      - "4051-4061:4040-4050"
+    volumes:
+      - ./:/home/jovyan/work
