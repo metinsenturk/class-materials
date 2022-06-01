@@ -29,8 +29,8 @@ Install dependencies.
 # install java libs and spark.
 !apt update > /dev/null
 !apt-get install openjdk-8-jdk-headless -qq > /dev/null
-!wget -q https://downloads.apache.org/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
-!tar xf spark-3.1.1-bin-hadoop3.2.tgz
+!wget -q https://downloads.apache.org/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
+!tar xf spark-3.2.0-bin-hadoop3.2.tgz
 !pip install -q findspark
 ```
 
@@ -40,7 +40,7 @@ Add pyspark to path.
 # set environment variables for java and spark
 import os
 os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
-os.environ["SPARK_HOME"] = "/content/spark-3.1.1-bin-hadoop3.2"
+os.environ["SPARK_HOME"] = "/content/spark-3.2.0-bin-hadoop3.2"
 # add pyspark to sys.path
 import findspark
 findspark.init()
